@@ -33,9 +33,6 @@ let allRecipes = [];
             }
         }
 
-        function saveRecipes() {
-            localStorage.setItem('recipes', JSON.stringify(allRecipes));
-        }
 
         function displayRecipes(recipes) {
             const recipeList = document.getElementById('recipe-list');
@@ -87,25 +84,7 @@ let allRecipes = [];
             `;
         }
         
-        document.getElementById('add-recipe-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const name = document.getElementById('recipe-name').value;
-            const ingredients = document.getElementById('ingredients').value.split('\n').filter(line => line.trim() !== '');
-            const instructions = document.getElementById('instructions').value.split('\n').filter(line => line.trim() !== '');
-            const imageUrl = document.getElementById('image-url').value;
-
-            if (!name || ingredients.length === 0 || instructions.length === 0) {
-                showMessage('Please fill out all required fields.');
-                return;
-            }
-
-            const newRecipe = { name, ingredients, instructions, imageUrl };
-            allRecipes.push(newRecipe);
-            saveRecipes();
-            document.getElementById('add-recipe-form').reset();
-            showPage('contents-page');
-            showMessage('Recipe added successfully!');
-        });
+        
         
         window.searchRecipes = function() {
             const query = document.getElementById('search-input').value.toLowerCase();
