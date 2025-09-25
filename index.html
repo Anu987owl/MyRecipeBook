@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Digital Recipe Book</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <header class="bg-red-600 text-white py-6 text-center shadow-lg">
+        <h1 class="text-4xl font-bold tracking-tight">My Digital Recipe Book</h1>
+        <p class="text-lg mt-2 font-medium">A collection of my favorite recipes.</p>
+    </header>
+
+    <main class="flex-grow container mx-auto p-4 sm:p-6 lg:p-8">
+
+        <section id="greetings-page" class="page active">
+            <div class="bg-white p-8 sm:p-12 rounded-2xl shadow-xl text-center max-w-2xl mx-auto">
+                <h2 class="text-3xl font-semibold text-red-600 mb-4">Welcome, my friend!</h2>
+                <p class="text-lg text-gray-700">
+                    I'm so glad you've come to my digital kitchen. This collection is a simple labor of love, a place to share the recipes that have brought me so much joy. I'm no professional chef, just a humble home cook, but I hope these recipes inspire you to create something delicious.
+                </p>
+                <button onclick="showPage('contents-page')" class="mt-8 px-8 py-3 bg-red-600 text-white font-semibold rounded-full shadow-lg hover:bg-red-700 transition duration-300 transform hover:scale-105">
+                    View Contents
+                </button>
+            </div>
+        </section>
+
+        <section id="contents-page" class="page">
+            <div class="bg-white p-8 sm:p-12 rounded-2xl shadow-xl max-w-3xl mx-auto">
+                <h2 class="text-3xl font-semibold text-red-600 mb-6 text-center">Contents</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 items-start">
+                    <div class="flex flex-col space-y-4">
+                        <h3 class="text-xl font-bold text-gray-900 border-b-2 border-red-200 pb-2">Recipes</h3>
+                        <a href="#" onclick="showPage('pancakes-recipe')" class="block text-lg text-gray-700 hover:text-red-600 transition duration-200">
+                            Classic Pancakes
+                        </a>
+                        <a href="#" onclick="showPage('spaghetti-recipe')" class="block text-lg text-gray-700 hover:text-red-600 transition duration-200">
+                            Simple Spaghetti Aglio e Olio
+                        </a>
+                        <a href="#" onclick="showPage('tuna-recipe')" class="block text-lg text-gray-700 hover:text-red-600 transition duration-200">
+                            Quick and Easy Tuna Salad
+                        </a>
+                        <a href="#" onclick="showPage('butter-chicken-recipe')" class="block text-lg text-gray-700 hover:text-red-600 transition duration-200">
+                            Butter Chicken
+                        </a>
+                        <a href="#" onclick="showPage('grilled-chicken-recipe')" class="block text-lg text-gray-700 hover:text-red-600 transition duration-200">
+                            Grilled Chicken
+                        </a>
+                        <a href="#" onclick="showPage('chicken-tikka-masala-recipe')" class="block text-lg text-gray-700 hover:text-red-600 transition duration-200">
+                            Chicken Tikka Masala
+                        </a>
+                        <a href="#" onclick="showPage('paneer-butter-masala-recipe')" class="block text-lg text-gray-700 hover:text-red-600 transition duration-200">
+                            Paneer Butter Masala
+                        </a>
+                        <a href="#" onclick="showPage('fish-finger-recipe')" class="block text-lg text-gray-700 hover:text-red-600 transition duration-200">
+                            Fish Finger
+                        </a>
+                        <a href="#" onclick="showPage('egg-fried-rice-recipe')" class="block text-lg text-gray-700 hover:text-red-600 transition duration-200">
+                            Egg Fried Rice
+                        </a>
+                        <a href="#" onclick="showPage('veg-fried-rice-recipe')" class="block text-lg text-gray-700 hover:text-red-600 transition duration-200">
+                            Veg Fried Rice
+                        </a>
+                        <a href="#" onclick="showPage('mixed-fried-rice-recipe')" class="block text-lg text-gray-700 hover:text-red-600 transition duration-200">
+                            Mixed Fried Rice
+                        </a>
+                        <a href="#" onclick="showPage('egg-roll-recipe')" class="block text-lg text-gray-700 hover:text-red-600 transition duration-200">
+                            Egg Roll
+                        </a>
+                        <a href="#" onclick="showPage('chicken-roll-recipe')" class="block text-lg text-gray-700 hover:text-red-600 transition duration-200">
+                            Chicken Roll
+                        </a>
+                        <a href="#" onclick="showPage('egg-chicken-roll-recipe')" class="block text-lg text-gray-700 hover:text-red-600 transition duration-200">
+                            Egg Chicken Roll
+                        </a>
+                    </div>
+                    <div class="flex flex-col space-y-4">
+                        <h3 class="text-xl font-bold text-gray-900 border-b-2 border-red-200 pb-2">Protein Intake</h3>
+                        <p class="text-lg text-gray-700">10g</p>
+                        <p class="text-lg text-gray-700">12g</p>
+                        <p class="text-lg text-gray-700">25g</p>
+                        <p class="text-lg text-gray-700">30g</p>
+                        <p class="text-lg text-gray-700">45g</p>
+                        <p class="text-lg text-gray-700">35g</p>
+                        <p class="text-lg text-gray-700">20g</p>
+                        <p class="text-lg text-gray-700">15g</p>
+                        <p class="text-lg text-gray-700">8g</p>
+                        <p class="text-lg text-gray-700">6g</p>
+                        <p class="text-lg text-gray-700">10g</p>
+                        <p class="text-lg text-gray-700">12g</p>
+                        <p class="text-lg text-gray-700">20g</p>
+                        <p class="text-lg text-gray-700">25g</p>
+                    </div>
+                </div>
+                <div class="text-center mt-8">
+                    <button onclick="showPage('greetings-page')" class="px-6 py-2 bg-gray-300 text-gray-800 font-semibold rounded-full hover:bg-gray-400 transition duration-300 transform hover:scale-105">
+                        Back to Home
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="pancakes-recipe" class="page">
+            <div class="bg-white p-8 rounded-2xl shadow-xl max-w-3xl mx-auto">
+                <button onclick="showPage('contents-page')" class="mb-6 flex items-center text-red-600 hover:text-red-700 transition duration-200">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    Back to Contents
+                </button>
+                <div class="recipe-card">
+                    <h2 class="text-3xl font-bold text-red-600 mb-4">Classic Pancakes</h2>
+                    <img src="images/fluffy-pancakes-feature.jpg" alt="Classic Pancakes" class="w-full h-auto rounded-lg shadow-md mb-6">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-semibold border-b-2 border-red-300 pb-2 mb-3">Ingredients</h3>
+                        <ul class="list-disc pl-5 text-lg text-gray-700 leading-relaxed space-y-2">
+                            <li>1 ½ cups all-purpose flour</li>
+                            <li>3 ½ teaspoons baking powder</li>
+                            <li>1 tablespoon white sugar</li>
+                            <li>¼ teaspoon salt</li>
+                            <li>1 ¼ cups milk</li>
+                            <li>1 egg</li>
+                            <li>3 tablespoons butter, melted</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold border-b-2 border-red-300 pb-2 mb-3">Instructions</h3>
+                        <ol class="list-decimal pl-5 text-lg text-gray-700 leading-relaxed space-y-2">
+                            <li>In a large bowl, sift together the flour, baking powder, sugar, and salt.</li>
+                            <li>In a separate bowl, whisk together the milk, egg, and melted butter.</li>
+                            <li>Pour the wet ingredients into the dry ingredients and mix until just combined. Do not overmix.</li>
+                            <li>Heat a lightly oiled griddle or frying pan over medium-high heat. Pour about ¼ cup of batter for each pancake.</li>
+                            <li>Cook until bubbles appear on the surface of the pancake, then flip and cook until browned on the other side.</li>
+                            <li>Serve the pancakes with blueberries, cherries and honey or as you may prefer.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="spaghetti-recipe" class="page">
+            <div class="bg-white p-8 rounded-2xl shadow-xl max-w-3xl mx-auto">
+                <button onclick="showPage('contents-page')" class="mb-6 flex items-center text-red-600 hover:text-red-700 transition duration-200">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    Back to Contents
+                </button>
+                <div class="recipe-card">
+                    <h2 class="text-3xl font-bold text-red-600 mb-4">Simple Spaghetti Aglio e Olio</h2>
+                    <img src="images/Aglio-e-Olio.jpg" alt="Spaghetti Aglio e Olio" class="w-full h-auto rounded-lg shadow-md mb-6">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-semibold border-b-2 border-red-300 pb-2 mb-3">Ingredients</h3>
+                        <ul class="list-disc pl-5 text-lg text-gray-700 leading-relaxed space-y-2">
+                            <li>8 ounces spaghetti</li>
+                            <li>½ cup olive oil</li>
+                            <li>4-6 cloves garlic, thinly sliced</li>
+                            <li>¼ teaspoon red pepper flakes (or to taste)</li>
+                            <li>¼ cup fresh parsley, chopped</li>
+                            <li>Salt and pepper to taste</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold border-b-2 border-red-300 pb-2 mb-3">Instructions</h3>
+                        <ol class="list-decimal pl-5 text-lg text-gray-700 leading-relaxed space-y-2">
+                            <li>Cook spaghetti according to package directions until al dente. Reserve ½ cup of pasta water before draining.</li>
+                            <li>While the pasta cooks, heat olive oil in a large skillet over low heat. Add garlic and red pepper flakes. Sauté until garlic is fragrant, about 2 minutes. Do not let the garlic brown.</li>
+                            <li>Add drained pasta to the skillet. Toss to coat with the oil mixture.</li>
+                            <li>Stir in the reserved pasta water and chopped parsley. Toss until a light sauce forms. Season with salt and pepper.</li>
+                            <li>Serve immediately, garnished with extra parsley if desired.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tuna-recipe" class="page">
+            <div class="bg-white p-8 rounded-2xl shadow-xl max-w-3xl mx-auto">
+                <button onclick="showPage('contents-page')" class="mb-6 flex items-center text-red-600 hover:text-red-700 transition duration-200">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    Back to Contents
+                </button>
+                <div class="recipe-card">
+                    <h2 class="text-3xl font-bold text-red-600 mb-4">Quick and Easy Tuna Salad</h2>
+                    <img src="images/Tuna-Salad.jpg" alt="Tuna Salad" class="w-full h-auto rounded-lg shadow-md mb-6">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-semibold border-b-2 border-red-300 pb-2 mb-3">Ingredients</h3>
+                        <ul class="list-disc pl-5 text-lg text-gray-700 leading-relaxed space-y-2">
+                            <li>1 (5 ounce) can tuna, drained</li>
+                            <li>2 tablespoons mayonnaise</li>
+                            <li>1 celery stalk, finely chopped</li>
+                            <li>1 tablespoon sweet pickle relish (optional)</li>
+                            <li>Salt and black pepper to taste</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold border-b-2 border-red-300 pb-2 mb-3">Instructions</h3>
+                        <ol class="list-decimal pl-5 text-lg text-gray-700 leading-relaxed space-y-2">
+                            <li>In a medium bowl, combine the drained tuna, mayonnaise, chopped celery, and relish (if using).</li>
+                            <li>Mix well until all ingredients are combined.</li>
+                            <li>Season with salt and pepper to taste.</li>
+                            <li>Serve with bread, crackers, or with a salad.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="butter-chicken-recipe" class="page">
+            <div class="bg-white p-8 rounded-2xl shadow-xl max-w-3xl mx-auto">
+                <button onclick="showPage('contents-page')" class="mb-6 flex items-center text-red-600 hover:text-red-700 transition duration-200">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    Back to Contents
+                </button>
+                <div class="recipe-card">
+                    <h2 class="text-3xl font-bold text-red-600 mb-4">Butter Chicken</h2>
+                    <img src="images/butter-chicken.jpg" alt="Butter Chicken" class="w-full h-auto rounded-lg shadow-md mb-6">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-semibold border-b-2 border-red-300 pb-2 mb-3">Ingredients</h3>
+                        <ul class="list-disc pl-5 text-lg text-gray-700 leading-relaxed space-y-2">
+                            <li>500g chicken breast, cubed</li>
+                            <li>1 cup plain yogurt</li>
+                            <li>2 tbsp butter</li>
+                            <li>1 onion, finely chopped</li>
+                            <li>2 cloves garlic, minced</li>
+                            <li>1 can crushed tomatoes</li>
+                            <li>½ cup heavy cream</li>
+                            <li>Spices: garam masala, turmeric, cumin, coriander</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold border-b-2 border-red-300 pb-2 mb-3">Instructions</h3>
+                        <ol class="list-decimal pl-5 text-lg text-gray-700 leading-relaxed space-y-2">
+                            <li>Marinate chicken in yogurt and spices for at least 30 minutes.</li>
+                            <li>Melt butter in a pan and sauté onion and garlic until soft.</li>
+                            <li>Add tomatoes and cook until the sauce thickens.</li>
+                            <li>Add marinated chicken and cook until no longer pink.</li>
+                            <li>Stir in heavy cream and simmer for 10-15 minutes. Serve hot with rice or naan.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="grilled-chicken-recipe" class="page">
+            <div class="bg-white p-8 rounded-2xl shadow-xl max-w-3xl mx-auto">
+                <button onclick="showPage('contents-page')" class="mb-6 flex items-center text-red-600 hover:text-red-700 transition duration-200">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    Back to Contents
+                </button>
+                <div class="recipe-card">
+                    <h2 class="text-3xl font-bold text-red-600 mb-4">Grilled Chicken</h2>
+                    <img src="images/grilled-chicken.jpg" alt="Grilled Chicken" class="w-full h-auto rounded-lg shadow-md mb-6">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-semibold border-b-2 border-red-300 pb-2 mb-3">Ingredients</h3>
+                        <ul class="list-disc pl-5 text-lg text-gray-700 leading-relaxed space-y-2">
+                            <li>4 boneless, skinless chicken breasts</li>
+                            <li>2 tbsp olive oil</li>
+                            <li>1 tsp smoked paprika</li>
+                            <li>1 tsp garlic powder</li>
+                            <li>½ tsp salt</li>
+                            <li>¼ tsp black pepper</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold border-b-2 border-red-300 pb-2 mb-3">Instructions</h3>
+                        <ol class="list-decimal pl-5 text-lg text-gray-700 leading-relaxed space-y-2">
+                            <li>In a small bowl, combine paprika, garlic powder, salt, and pepper.</li>
+                            <li>Rub chicken breasts with olive oil, then sprinkle with the spice mixture.</li>
+                            <li>Preheat grill to medium-high heat.</li>
+                            <li>Grill chicken for 6-8 minutes per side, or until cooked through.</li>
+                            <li>Serve on a plate, sprinkle some chopped coriander and garnish with lemons</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="chicken-tikka-masala-recipe" class="page">
+            <div class="bg-white p-8 rounded-2xl shadow-xl max-w-3xl mx-auto">
+                <button onclick="showPage('contents-page')" class="mb-6 flex items-center text-red-600 hover:text-red-700 transition duration-200">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    Back to Contents
+                </button>
+                <div class="recipe-card">
+                    <h2 class="text-3xl font-bold text-red-600 mb-4">Chicken Tikka Masala</h2>
+                    <img src="images/Chicken-Tikka-Masala.jpg" alt="Chicken Tikka Masala" class="w-full h-auto rounded-lg shadow-md mb-6">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-semibold border-b-2 border-red-300 pb-2 mb-3">Ingredients</h3>
+                        <ul class="list-disc pl-5 text-lg text-gray-700 leading-relaxed space-y-2">
+                            <li>500g chicken thighs, cubed</li>
+                            <li>1 cup plain yogurt</li>
+                            <li>1 onion, diced</li>
+                            <li>1 can tomato puree</li>
+                            <li>½ cup heavy cream</li>
+                            <li>Spices: cumin, coriander, turmeric, paprika, ginger-garlic paste</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold border-b-2 border-red-300 pb-2 mb-3">Instructions</h3>
+                        <ol class="list-decimal pl-5 text-lg text-gray-700 leading-relaxed space-y-2">
+                            <li>Marinate chicken in yogurt and spices for at least 2 hours.</li>
+                            <li>Grill or pan-fry chicken until browned and cooked through.</li>
+                            <li>Sauté onion, then add tomato puree and spices to make the sauce.</li>
+                            <li>Add the cooked chicken and heavy cream to the sauce and simmer for 15 minutes.</li>
+                            <li>Serve with rice or naan</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="paneer-butter-masala-recipe" class="page">
+            <div class="bg-white p-8 rounded-2xl shadow-xl max-w-3xl mx-auto">
+                <button onclick="showPage('contents-page')" class="mb-6 flex items-center text-red-600 hover:text-red-700 transition duration-200">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    Back to Contents
+                </button>
+                <div class="recipe-card">
+                    <h2 class="text-3xl font-bold text-red-600 mb-4">Paneer Butter Masala</h2>
+                    <img src="images/paneer_butter_masala.jpg" alt="Paneer Butter Masala" class="w-full h-auto rounded-lg shadow-md mb-6">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-semibold border-b-2 border-red-300 pb-2 mb-3">Ingredients</h3>
+                        <ul class="list-disc pl-5 text-lg text-gray-700 leading-relaxed space-y-2">
+                            <li>250g paneer, cubed</li>
+                            <li>2 tbsp butter</li>
+                            <li>1 onion, finely chopped</li>
+                            <li>1 can tomato puree</li>
+                            <li>½ cup heavy cream</li>
+                            <li>Spices: garam masala, turmeric, salt, sugar</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold border-b-2 border-red-300 pb-2 mb-3">Instructions</h3>
+                        <ol class="list-decimal pl-5 text-lg text-gray-700 leading-relaxed space-y-2">
+                            <li>Sauté onion in butter until soft. Add tomato puree and spices, cooking until sauce thickens.</li>
+                            <li>Add paneer cubes and simmer gently.</li>
+                            <li>Stir in heavy cream and cook for 5 minutes. Serve with rice or roti.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="fish-finger-recipe" class="page">
+            <div class="bg-white p-8 rounded-2xl shadow-xl max-w-3xl mx-auto">
+                <button onclick="showPage('contents-page')" class="mb-6 flex items-center text-red-600 hover:text-red-700 transition duration-200">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    Back to Contents
+                </button>
+                <div class="recipe-card">
+                    <h2 class="text-3xl font-bold text-red-600 mb-4">Fish Finger</h2>
+                    <img src="images/fish-fingers.jpeg" alt="Fish Finger" class="w-full h-auto rounded-lg shadow-md mb-6">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-semibold border-b-2 border-red-300 pb-2 mb-3">Ingredients</h3>
+                        <ul class="list-disc pl-5 text-lg text-gray-700 leading-relaxed space-y-2">
+                            <li>500g fish fillets, cut into strips</li>
+                            <li>1 cup breadcrumbs</li>
+                            <li>1 egg, beaten</li>
+                            <li>½ cup all-purpose flour</li>
+                            <li>Salt and pepper to taste</li>
+                            <li>Oil for frying</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold border-b-2 border-red-300 pb-2 mb-3">Instructions</h3>
+                        <ol class="list-decimal pl-5 text-lg text-gray-700 leading-relaxed space-y-2">
+                            <li>Season fish strips with salt and pepper.</li>
+                            <li>Dredge each strip in flour, then dip in beaten egg, and finally coat in breadcrumbs.</li>
+                            <li>Heat oil in a pan and fry fish fingers until golden brown and crispy.</li>
+                            <li>Serve hot with tartar sauce or ketchup.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="egg-fried-rice-recipe" class="page">
+            <div class="bg-white p-8 rounded-2xl shadow-xl max-w-3xl mx-auto">
+                <button onclick="showPage('contents-page')" class="mb-6 flex items-center text-red-600 hover:text-red-700 transition duration-200">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    Back to Contents
+                </button>
+                <div class="recipe-card">
+                    <h2 class="text-3xl font-bold text-red-600 mb-4">Egg Fried Rice</h2>
+                    <img src="images/fried-rice.jpg" alt="Egg Fried Rice" class="w-full h-auto rounded-lg shadow-md mb-6">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-semibold border-b-2 border-red-300 pb-2 mb-3">Ingredients</h3>
+                        <ul class="list-disc pl-5 text-lg text-gray-700 leading-relaxed space-y-2">
+                            <li>2 cups cooked rice (day-old is best)</li>
+                            <li>2 eggs, scrambled</li>
+                            <li>1 tbsp soy sauce</li>
+                            <li>1 tsp sesame oil</li>
+                            <li>½ cup mixed vegetables (peas, carrots)</li>
+                            <li>1 green onion, chopped</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold border-b-2 border-red-300 pb-2 mb-3">Instructions</h3>
+                        <ol class="list-decimal pl-5 text-lg text-gray-700 leading-relaxed space-y-2">
+                            <li>Heat a wok or large pan with oil. Sauté mixed vegetables until tender.</li>
+                            <li>Add cooked rice and break it apart. Stir-fry for 2 minutes.</li>
+                            <li>Pour scrambled eggs into the pan and cook, stirring constantly.</li>
+                            <li>Stir in soy sauce and sesame oil. Mix well. Garnish with green onion.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="veg-fried-rice-recipe" class="page">
+            <div class="bg-white p-8 rounded-2xl shadow-xl max-w-3xl mx-auto">
+                <button onclick="showPage('contents-page')" class="mb-6 flex items-center text-red-600 hover:text-red-700 transition duration-200">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    Back to Contents
+                </button>
+                <div class="recipe-card">
+                    <h2 class="text-3xl font-bold text-red-600 mb-4">Veg Fried Rice</h2>
+                    <img src="images/Veg-Fried-Rice.jpg" alt="Veg Fried Rice" class="w-full h-auto rounded-lg shadow-md mb-6">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-semibold border-b-2 border-red-300 pb-2 mb-3">Ingredients</h3>
+                        <ul class="list-disc pl-5 text-lg text-gray-700 leading-relaxed space-y-2">
+                            <li>2 cups cooked rice (day-old is best)</li>
+                            <li>1 tbsp soy sauce</li>
+                            <li>1 tsp sesame oil</li>
+                            <li>1 cup mixed vegetables (peas, carrots, corn, bell peppers)</li>
+                            <li>1 green onion, chopped</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold border-b-2 border-red-300 pb-2 mb-3">Instructions</h3>
+                        <ol class="list-decimal pl-5 text-lg text-gray-700 leading-relaxed space-y-2">
+                            <li>Heat a wok or large pan with oil. Sauté mixed vegetables until tender-crisp.</li>
+                            <li>Add cooked rice and break it apart. Stir-fry for 2 minutes.</li>
+                            <li>Stir in soy sauce and sesame oil. Mix well. Garnish with green onion.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="mixed-fried-rice-recipe" class="page">
+            <div class="bg-white p-8 rounded-2xl shadow-xl max-w-3xl mx-auto">
+                <button onclick="showPage('contents-page')" class="mb-6 flex items-center text-red-600 hover:text-red-700 transition duration-200">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    Back to Contents
+                </button>
+                <div class="recipe-card">
+                    <h2 class="text-3xl font-bold text-red-600 mb-4">Mixed Fried Rice</h2>
+                    <img src="images/mixed-fried-rice.jpg" alt="Mixed Fried Rice" class="w-full h-auto rounded-lg shadow-md mb-6">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-semibold border-b-2 border-red-300 pb-2 mb-3">Ingredients</h3>
+                        <ul class="list-disc pl-5 text-lg text-gray-700 leading-relaxed space-y-2">
+                            <li>2 cups cooked rice (day-old is best)</li>
+                            <li>1 cup mixed vegetables</li>
+                            <li>1 egg, scrambled</li>
+                            <li>½ cup cooked chicken, shrimp</li>
+                            <li>1 tbsp soy sauce</li>
+                            <li>1 tsp sesame oil</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold border-b-2 border-red-300 pb-2 mb-3">Instructions</h3>
+                        <ol class="list-decimal pl-5 text-lg text-gray-700 leading-relaxed space-y-2">
+                            <li>Heat a wok with oil. Cook chicken, shrimp. Remove and set aside.</li>
+                            <li>Add vegetables and stir-fry until tender-crisp.</li>
+                            <li>Add rice and cook for 2 minutes. Stir in the scrambled egg and cooked meat.</li>
+                            <li>Finish with soy sauce, sesame oil, and stir-fry until well combined.</li>
+                            <li>Serve hot!</li>
+                            <li></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="egg-roll-recipe" class="page">
+            <div class="bg-white p-8 rounded-2xl shadow-xl max-w-3xl mx-auto">
+                <button onclick="showPage('contents-page')" class="mb-6 flex items-center text-red-600 hover:text-red-700 transition duration-200">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    Back to Contents
+                </button>
+                <div class="recipe-card">
+                    <h2 class="text-3xl font-bold text-red-600 mb-4">Egg Roll</h2>
+                    <img src="images/EggRoll.jpg" alt="Egg Roll" class="w-full h-auto rounded-lg shadow-md mb-6">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-semibold border-b-2 border-red-300 pb-2 mb-3">Ingredients</h3>
+                        <ul class="list-disc pl-5 text-lg text-gray-700 leading-relaxed space-y-2">
+                            <li>2 eggs, beaten</li>
+                            <li>1 tbsp oil</li>
+                            <li>1 tsp soy sauce</li>
+                            <li>Salt and pepper to taste</li>
+                            <li>1 flour tortilla or thin chapati</li>
+                            <li>thinly cut cucumbers and onions</li>
+                            <li>tomato sauce</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold border-b-2 border-red-300 pb-2 mb-3">Instructions</h3>
+                        <ol class="list-decimal pl-5 text-lg text-gray-700 leading-relaxed space-y-2">
+                            <li>Heat oil in a pan. Pour beaten eggs, soy sauce, salt, and pepper.</li>
+                            <li>Cook until the egg is mostly set. Place the tortilla on top.</li>
+                            <li>Flip the tortilla and egg, cooking for 1 minute.</li>
+                            <li>Put cucumbers and onions along with the tomato sauce in the center and then roll it up tightly using a paper or foil and serve hot.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="chicken-roll-recipe" class="page">
+            <div class="bg-white p-8 rounded-2xl shadow-xl max-w-3xl mx-auto">
+                <button onclick="showPage('contents-page')" class="mb-6 flex items-center text-red-600 hover:text-red-700 transition duration-200">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    Back to Contents
+                </button>
+                <div class="recipe-card">
+                    <h2 class="text-3xl font-bold text-red-600 mb-4">Chicken Roll</h2>
+                    <img src="images/chicken- Roll.jpeg" alt="Chicken Roll" class="w-full h-auto rounded-lg shadow-md mb-6">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-semibold border-b-2 border-red-300 pb-2 mb-3">Ingredients</h3>
+                        <ul class="list-disc pl-5 text-lg text-gray-700 leading-relaxed space-y-2">
+                            <li>250g cooked chicken strips</li>
+                            <li>1 onion, thinly sliced</li>
+                            <li>1 tsp ginger-garlic paste</li>
+                            <li>1 tbsp soy sauce</li>
+                            <li>1 tsp chopped chili, thinly cut onion</li>
+                            <li>1 flour tortilla or thin chapati</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold border-b-2 border-red-300 pb-2 mb-3">Instructions</h3>
+                        <ol class="list-decimal pl-5 text-lg text-gray-700 leading-relaxed space-y-2">
+                            <li>Sauté onion, ginger-garlic paste, and chili flakes in a pan.</li>
+                            <li>Add chicken and soy sauce. Cook for 5 minutes.</li>
+                            <li>Warm the tortilla or chapati, place the chicken mixture,chillies,thinly cut onions in the center, and roll it up tightly using a paper or foil.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="egg-chicken-roll-recipe" class="page">
+            <div class="bg-white p-8 rounded-2xl shadow-xl max-w-3xl mx-auto">
+                <button onclick="showPage('contents-page')" class="mb-6 flex items-center text-red-600 hover:text-red-700 transition duration-200">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    Back to Contents
+                </button>
+                <div class="recipe-card">
+                    <h2 class="text-3xl font-bold text-red-600 mb-4">Egg Chicken Roll</h2>
+                    <img src="images/egg-chicken-roll.jpg" alt="Egg Chicken Roll" class="w-full h-auto rounded-lg shadow-md mb-6">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-semibold border-b-2 border-red-300 pb-2 mb-3">Ingredients</h3>
+                        <ul class="list-disc pl-5 text-lg text-gray-700 leading-relaxed space-y-2">
+                            <li>2 eggs, beaten</li>
+                            <li>250g cooked chicken, shredded</li>
+                            <li>1 onion, thinly sliced</li>
+                            <li>1 tbsp oil</li>
+                            <li>1 tsp soy sauce</li>
+                            <li>Salt and pepper to taste</li>
+                            <li>1 flour tortilla or thin chapati</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold border-b-2 border-red-300 pb-2 mb-3">Instructions</h3>
+                        <ol class="list-decimal pl-5 text-lg text-gray-700 leading-relaxed space-y-2">
+                            <li>Heat oil in a pan. Add chicken and pepper, salt and cook for 2 minutes.</li>
+                            <li>Remove the chicken mixture and set aside.</li>
+                            <li>Pour beaten eggs into the same pan. Place the tortilla on top of the cooking egg.</li>
+                            <li>Flip the tortilla and egg. Add the chicken mixture and onions to the center and roll it up using a paper or foil. Serve hot with salad.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center py-6 mt-auto">
+        <p>&copy; 2025 Recipe Book. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
